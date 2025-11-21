@@ -1,0 +1,85 @@
+{
+  "streams": [
+    {
+      "tap_stream_id": "posts",
+      "stream": "posts",
+      "key_properties": ["id"],
+      "replication_key": "updated_time",
+      "replication_method": "INCREMENTAL",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": ["null", "string"],
+            "description": "Unique post ID"
+          },
+          "message": {
+            "type": ["null", "string"],
+            "description": "Post message content"
+          },
+          "created_time": {
+            "type": ["null", "string"],
+            "format": "date-time",
+            "description": "Time the post was created"
+          },
+          "updated_time": {
+            "type": ["null", "string"],
+            "format": "date-time",
+            "description": "Time the post was last updated"
+          },
+          "likes_count": {
+            "type": ["null", "integer"],
+            "description": "Total number of likes"
+          },
+          "comments_count": {
+            "type": ["null", "integer"],
+            "description": "Total number of comments"
+          },
+          "shares_count": {
+            "type": ["null", "integer"],
+            "description": "Total number of shares"
+          },
+          "reactions_count": {
+            "type": ["null", "integer"],
+            "description": "Total number of reactions (all types)"
+          }
+        }
+      },
+      "metadata": {
+        "selected": true
+      }
+    },
+    {
+      "tap_stream_id": "page_insights",
+      "stream": "page_insights",
+      "key_properties": ["page_id", "metric_name", "date"],
+      "replication_key": "date",
+      "replication_method": "INCREMENTAL",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "page_id": {
+            "type": ["null", "string"],
+            "description": "Facebook Page ID"
+          },
+          "date": {
+            "type": ["null", "string"],
+            "format": "date",
+            "description": "Date of the metric"
+          },
+          "metric_name": {
+            "type": ["null", "string"],
+            "description": "Name of the metric"
+          },
+          "metric_value": {
+            "type": ["null", "integer"],
+            "description": "Value of the metric"
+          }
+        }
+      },
+      "metadata": {
+        "selected": true
+      }
+    }
+  ]
+}

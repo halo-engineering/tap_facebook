@@ -1,0 +1,7 @@
+{
+  "client_id": "YOUR_FACEBOOK_APP_ID",
+  "client_secret": "YOUR_FACEBOOK_APP_SECRET",
+  "refresh_token": "YOUR_LONG_LIVED_USER_ACCESS_TOKEN",
+  "page_id": "YOUR_FACEBOOK_PAGE_ID",
+  "start_date": "2025-01-01T00:00:00Z"
+}

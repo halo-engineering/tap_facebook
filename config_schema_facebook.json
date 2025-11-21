@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "title": "Facebook Engagement Configuration",
+  "description": "Configuration for connecting to Facebook Pages",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "title": "Facebook App ID",
+      "description": "Your Facebook App ID from developers.facebook.com",
+      "order": 1
+    },
+    "client_secret": {
+      "type": "string",
+      "title": "Facebook App Secret",
+      "description": "Your Facebook App Secret (kept secure)",
+      "order": 2,
+      "secret": true,
+      "writeOnly": true
+    },
+    "page_id": {
+      "type": "string",
+      "title": "Facebook Page ID",
+      "description": "The ID of the Facebook Page to sync data from",
+      "order": 3,
+      "examples": ["123456789012345"]
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Start Date",
+      "description": "Date to start syncing historical data from (ISO 8601 format)",
+      "default": "2025-01-01T00:00:00Z",
+      "order": 4,
+      "examples": ["2025-01-01T00:00:00Z"]
+    }
+  },
+  "required": ["page_id"],
+  "secret": ["client_secret", "access_token", "refresh_token"],
+  "oauth": {
+    "provider": "facebook",
+    "scopes": [
+      "pages_show_list",
+      "pages_read_engagement",
+      "pages_read_user_content",
+      "read_insights"
+    ],
+    "token_fields": {
+      "access_token": "access_token",
+      "refresh_token": "refresh_token"
+    }
+  }
+}
