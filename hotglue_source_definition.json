@@ -1,0 +1,49 @@
+{
+  "name": "Facebook Pages",
+  "tap_name": "tap-facebook",
+  "install_uri": "git+https://github.com/halo-engineering/tap_facebook.git",
+  "executable": "tap-facebook",
+  "description": "Extract engagement data from Facebook Pages with OAuth 2.0 authentication",
+  "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+  "capabilities": ["discover", "state", "catalog"],
+  "settings": [
+    {
+      "name": "client_id",
+      "label": "Facebook App ID",
+      "type": "string",
+      "required": true,
+      "description": "Your Facebook App ID from developers.facebook.com"
+    },
+    {
+      "name": "client_secret",
+      "label": "Facebook App Secret",
+      "type": "string",
+      "required": true,
+      "sensitive": true,
+      "description": "Your Facebook App Secret (kept secure)"
+    },
+    {
+      "name": "refresh_token",
+      "label": "Access Token",
+      "type": "string",
+      "required": true,
+      "sensitive": true,
+      "description": "Facebook access token (will be automatically exchanged for long-lived token)"
+    },
+    {
+      "name": "page_id",
+      "label": "Facebook Page ID",
+      "type": "string",
+      "required": true,
+      "description": "The ID of the Facebook Page to sync data from"
+    },
+    {
+      "name": "start_date",
+      "label": "Start Date",
+      "type": "string",
+      "required": false,
+      "default": "2025-01-01T00:00:00Z",
+      "description": "Date to start syncing historical data (ISO 8601 format, e.g., 2025-01-01T00:00:00Z)"
+    }
+  ]
+}
