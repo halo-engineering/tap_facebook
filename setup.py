@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     author='Social Integration Research',
     author_email='research@example.com',
-    url='https://github.com/yourusername/tap-facebook-engagement',
+    url='https://github.com/halo-engineering/tap_facebook',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
