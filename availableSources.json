@@ -1,0 +1,42 @@
+[
+  {
+    "tap": "tap-facebook",
+    "label": "Facebook Pages",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+    "domain": "facebook.com",
+    "type": "api",
+    "install_uri": "git+https://github.com/halo-engineering/tap_facebook.git",
+    "connect_ui_params": {
+      "client_id": {
+        "label": "Facebook App ID",
+        "description": "Your Facebook App ID from developers.facebook.com",
+        "type": "text",
+        "required": true
+      },
+      "client_secret": {
+        "label": "Facebook App Secret",
+        "description": "Your Facebook App Secret (kept secure)",
+        "type": "password",
+        "required": true
+      },
+      "refresh_token": {
+        "label": "Access Token",
+        "description": "Facebook access token (will be automatically exchanged for long-lived token)",
+        "type": "password",
+        "required": true
+      },
+      "page_id": {
+        "label": "Facebook Page ID",
+        "description": "The ID of the Facebook Page to sync data from",
+        "type": "text",
+        "required": true
+      },
+      "start_date": {
+        "label": "Start Date",
+        "description": "Date to start syncing historical data (ISO 8601 format, e.g., 2025-01-01T00:00:00Z)",
+        "type": "text",
+        "required": false
+      }
+    }
+  }
+]
